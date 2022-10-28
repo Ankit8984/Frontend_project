@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Disk
+        </title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <section id="home">
+            <div class="layer">
+                <div class="home_top">
+                    <div class="logo">
+                        <!-- <img src="images/logo.png"> -->
+                    
+                        <div class="nav">
+                            <ul>
+                                <li><a href="index.html">HOME</a></li>
+                                <li><a href="algo.html">ALGORITHMS</a></li>
+                                <li><a href="#">ABOUT</MEnu></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="home_content">
+                    <h1>DSA</h1>
+                    <p> Disk Scheduling Algorithm</p>
+                    <a href="algo.html"><button>Run Algo </button></a>
+                    <button>About Us</button>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="se2">
+                <div class="se2_content">
+                    <div class="se2_box">
+                        <h1>Seek Time</h1>
+                        <br>
+                        <br>
+                        <p>
+                            Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write
+                        </p>
+                    </div>
+                    <div class="se2_box">
+                        <h1>Rotational Latency</h1>
+                        <br><br>
+                        <p>
+                            Rotational Latency is the time taken by the desired sector of disk to rotate into a position so the it can access the read/write heads.
+                        </p>
+                    </div>
+                    <div class="se2_box">
+                        <h1>Transfer Time</h1>
+                        <br><br>
+                        <p>
+                            Transfer time is the time to transfer the data. it depends on the rotating speed of the disk and number of bytes to be transferred.
+                        </p>
+                    </div>
+                    <div class="se2_box">
+                        <h1>Disk Acces Time</h1>
+                        <br>
+                        <p>
+                            Disk Access Time = Seek Time + Rotational Latency + Transfer Time
+                        </p>
+                    </div>
+                    <div class="se2_box">
+                        <h1>Disk Response Time</h1>
+                        <br><br>
+                        <p>
+                            Response Time is the average of time spent by a request waiting to perform it's I/O operation
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="content">
+            <div class="content_text">
+                <h3>Disk Scheduling Algorithm<br></h3>
+                <p>
+                    Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk scheduling is also known as I/O scheduling.
+                </p>
+                <a href="algo.html"><button>RUN ALGO</button></a>
+
+            </div>
+            <div class="content_img">
+                <img src="disk.jpg">
+            </div>
+        </section>
+        <section id="content"> 
+            <div class="content_img">
+                <img src="disk.jpg">
+            </div>
+            <div class="content_text">
+                <h3>First Come First Serve(FCFS)<br></h3>
+                <p>
+                    FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are addressed in the order they arrive in the disk queue. Let us understand this with the help of an example.
+                    <ul>
+                        <br>
+                        <li type="none">
+                            <p style="font-size:25px;  ">Advantages:</p>
+                            <ul> 
+                                <li>
+                                    <p>Every request gets a fair chance</p>
+                                </li>
+                                <li>
+                                    <p>No indefinite postponement</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li type="none">
+                            <p style="font-size: 25px;">DisAdvantages:</p>
+                            <ul>
+                                <li>
+                                    <p>Does not try to optimize seek time</p>
+                                </li>
+                                <li>
+                                    <p>May not provide the best possible service</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+                <button>RUN ALGO</button>
+            </div>
+           
+        </section>
+        <section id="content">
+            <div class="content_text">
+                <h3>Shortest Seek First<br></h3>
+                <p>
+                    In SSTF, requests having shortest seek time are executed first. So, the seek time of every requestis Calculated in advance in the queue & then they are scheduled according to their calculated seek time. So, request near the disk arm will get executed first. 
+                </p>
+                <br>
+                <ul>
+                    <li type="none">
+                        <p style="font-size: 25px;">Advantages:</p>
+                        <ul>
+                            <li>
+                                <p>Average Response Time Decreases and Throughput Increases</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li type="none">
+                        <p style="font-size:25px;">DisAdvantages:</p>
+                        <ul>
+                            <li>
+                                <p>Overhead to calculate seek time in advance</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Can cause Starvation for a request which has higher seek time
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <button>RUN ALGO</button>
+            </div>
+            <div class="content_img">
+                <img src="disk.jpg">
+            </div>
+        </section>
+        <section>
+            <div class="s2">
+                <div class="box">
+                    <div class="text">
+                        <h1>SCAN</h1>
+                        <p>
+                            In SCAN algorithm the disk arm moves into a particular direction and services the requests coming in it's path and after reaching the end of the disk. it reverses it's direction and again services the request arriving in it's path. So, this algorithm works as an elevator and hence also known as elevator algorithm. As a result. the requests at the midrange are serviced more and those arriving behind the disk arm will have to wait.
+                        </p>
+
+                    </div>
+                    <div class="text">
+                        <h1>LOOK</h1>
+                        <p>
+                            It is similar to the SCAN disk scheduling algorithm except for the difference that the disk arm in spite of going to the end of the disk goes only to the last request to be serviced in front of the head and then reverses it's direction from there only. Thus it prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="enroll">
+            <div class="layer_a">
+                <div class="content_enroll">
+                    <p> That's all</p>
+                    <!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, iste.</span> -->
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
